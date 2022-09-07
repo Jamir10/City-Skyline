@@ -5,6 +5,8 @@
     --building-color3: #cc6699;
     --building-color4: #538cc6;
     --window-color1: black;
+    --window-color2: #8cd9b3;
+    --window-color3: #d98cb3;
 }
 
 * {
@@ -40,6 +42,14 @@ body {
     align-items: center;
 }
 
+.bb1-window {
+    height: 10%;
+    background: linear-gradient(
+        var(--building-color1),
+        var(--window-color1)
+    );
+}
+
 /* Remember that these percentages are relative to the parent 
 and note that the heights will add up to 100% - vertically 
 filling the container. from bb1*/
@@ -70,14 +80,6 @@ filling the container. from bb1*/
     */
 }
 
-.bb1-window {
-    height: 10%;
-    background: linear-gradient(
-        var(--building-color1),
-        var(--window-color1)
-    );
-}
-
 .bb1b {
     width: 80%;
     /* height: 10%;  
@@ -93,25 +95,89 @@ filling the container. from bb1*/
 .bb1d {
     width: 100%;
     height: 70%;
-    background-color: var(--building-color1);
+    /* background-color: var(--building-color1); */
+    background: linear-gradient(
+        /* orange, you can make it to 3 colors, including this one */
+        var(--building-color1) 50%, /* 50% where you want a gradient transition to complete */
+        var(--window-color1)
+    );
 }
 
 .bb2 {
     width: 10%;
     height: 50%;
-    background-color: var(--building-color2);
+    /* background-color: var(--building-color2); removed, we set the background in bb2b as repeating linear gradient */
+}
+
+/* Body of building2 */
+.bb2b { 
+    width: 100%;
+    height: 100%;
+    background: repeating-linear-gradient(
+    var(--building-color2) 0%,
+    var(--building-color2) 6%,
+    var(--window-color2) 6%,
+    var(--window-color2) 9%
+    );
+    /* Gradient transitions often gradually change from 
+    one color to another. You can make the change a 
+    solid line like this: 
+    linear-gradient(
+        var(--first-color) 0%,
+        var(--first-color) 40%,
+        var(--second-color) 40%,
+        var(--second-color) 80%
+    );
+    make "repeating-linear-gradient" type for repeating the process
+    */
+}
+
+/* Tip of building 2 */
+.bb2a {
+    /* margin: auto;
+    border-top: 1vw solid #000; */
+    border-bottom: 5vh solid var(--building-color2);
+    border-left: 5vw solid transparent;
+    border-right: 5vw solid transparent;
 }
 
 .bb3 {
     width: 10%;
     height: 55%;
-    background-color: var(--building-color3);
+    /* background-color: var(--building-color3); */
+    background: repeating-linear-gradient(
+        90deg,  /* You can specify another direction by adding it before your colors*/
+        var(--building-color3),
+        var(--building-color3),
+        var(--window-color3) 15%
+        /* When you don't specify a distance for a color, 
+        it will use the values that makes sense. In this 
+        case, the first two colors will default to 0% and 
+        7.5% because it starts at 0%, and 7.5% is half of 
+        the 15%. 
+        */
+    );
 }
 
 .bb4 {
     width: 11%;
     height: 58%;
     background-color: var(--building-color4);
+}
+
+.bb4a {
+    width: 3%;
+    height: 10%;
+}
+
+.bb4b {
+    width: 3%;
+    height: 10%;
+}
+
+.bb4c {
+    width: 3%;
+    height: 10%;
 }
 
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground 
