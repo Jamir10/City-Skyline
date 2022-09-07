@@ -7,6 +7,7 @@
     --window-color1: black;
     --window-color2: #8cd9b3;
     --window-color3: #d98cb3;
+    --window-color4: #8cb3d9;
 }
 
 * {
@@ -31,15 +32,30 @@ body {
     justify-content: space-evenly; 
 }
 
+.building-wrap{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.window-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
 /* BACKGROUND BUILDINGS - "bb" stands for 
 "background building" */
 
 .bb1 {
     width: 10%;
     height: 70%;
-    display: flex;
+    /* display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; 
+    moved to building wrap
+    share properties with bb4 to center the elements
+    */
 }
 
 .bb1-window {
@@ -162,22 +178,30 @@ filling the container. from bb1*/
 .bb4 {
     width: 11%;
     height: 58%;
-    background-color: var(--building-color4);
+}
+
+.bb4-window {
+    width: 18%;
+    height: 90%;
+    background-color: var(--window-color4);
 }
 
 .bb4a {
     width: 3%;
     height: 10%;
+    background-color: var(--building-color4);
 }
 
 .bb4b {
-    width: 3%;
-    height: 10%;
+    width: 80%;
+    height: 5%;
+    background-color: var(--building-color4);
 }
 
 .bb4c {
-    width: 3%;
-    height: 10%;
+    width: 100%;
+    height: 85%;
+    background-color: var(--building-color4);
 }
 
 /* FOREGROUND BUILDINGS - "fb" stands for "foreground 
